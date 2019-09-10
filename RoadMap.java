@@ -426,4 +426,14 @@ public class RoadMap extends GameObject
 		return testPassed;
 	}
 	
+	public void printDebugStats()
+	{
+		System.out.println("Current Stats:");
+		System.out.println("Number of roads: " + this.roads.size() + 
+				" out of " + this.maxNumRoads);
+		System.out.println("Number of intersections: " + this.intersections.size());
+		System.out.println("Number of cars: " + this.vehicles.size());
+		System.out.println();
+	}
+	
 }
