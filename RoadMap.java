@@ -75,13 +75,12 @@ public class RoadMap extends GameObject
 			    ticksSinceLastRoadCreation = 0;
 			    this.createNewRoad(5);
 			}
-			
-			// if we don't have too many vehicles, make a new one
-			if(vehicles.size() < roads.size()*this.carsPerRoad)// && vehicles.size() < 1)
-			{
-				this.createNewVehicle();
-			}
-			
+		}
+		
+		// if we don't have too many vehicles, make a new one
+		if(vehicles.size() < roads.size()*this.carsPerRoad)// && vehicles.size() < 1)
+		{
+			this.createNewVehicle();
 		}
 	}
 
