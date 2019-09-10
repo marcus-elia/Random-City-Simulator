@@ -46,6 +46,20 @@ public class KeyInput extends KeyAdapter
     public void keyReleased(KeyEvent e)
     {
     	int key = e.getKeyCode();
+    	
+    	for(int i = 0; i < handler.objects.size(); i++)
+    	{
+    		GameObject temp = handler.objects.get(i);
+    		
+    		if(temp.getID() == ID.Map)
+    		{
+    			RoadMap theRoadMap = (RoadMap)temp;
+    			if(key == KeyEvent.VK_D)
+    			{
+    				theRoadMap.printDebugStats();
+    			}
+    		}
+    	}
     }
 	
 }
