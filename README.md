@@ -1,6 +1,8 @@
 # Random-City-Simulator
 The generates a random map of roads to form a city.  Cars randomly spawn in and move around the city.  The user can move around the
-city by holding the arrow keys.
+city by holding the arrow keys. Pressing d results in some debug stats being printed to the console.
+
+All of the code used to make the animations run and show up in a window are from RealTutsGML's youtube tutorial series "Java Programming: Let's Build a Game."
 
 Roads
 ===========================================================================================================================================
