@@ -17,6 +17,9 @@ public class Vehicle extends GameObject
 		
 	private double acceleration;
 		
+	// determines how fast the car goes and whether or not it stops
+	private double aggression;
+	
 	// the x and y coordinates this vehicle is heading toward next
 	// these could be part of a turn
 	private double targetX;
@@ -65,8 +68,9 @@ public class Vehicle extends GameObject
 		super(x, y, id);
 		this.rm = rm;
 		
-		// set the original speed, acceleration, and position
-		this.normalSpeed = 1 + (Math.random()-.5);
+		// set the original aggression, speed, acceleration, and position
+		this.aggression = Math.random();
+		this.normalSpeed = 1 + (this.aggression - .5);
 		this.speed = 0;
 		this.acceleration = .05;
 		this.currentRoad = currentRoad;
@@ -168,7 +172,8 @@ public class Vehicle extends GameObject
 		// the intersection, then stop
 		else if(this.isOnRoad && !this.isStopped && !this.isStuck &&
 				curDistanceToGo < (this.frontLength + this.speed) &&
-				curDistanceToGo > this.frontLength)
+				curDistanceToGo > this.frontLength &&
+				Math.random() > this.aggression)
 		{
 			this.isStopped = true;
 			return;
