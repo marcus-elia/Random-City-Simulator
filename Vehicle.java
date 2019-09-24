@@ -62,6 +62,14 @@ public class Vehicle extends GameObject
 	// how long we have been stuck in a row
 	private int stuckTime;
 	
+	// The shape to draw
+	private double[] renderXPoints;
+	private double[] renderYPoints;
+	
+	// The current hit box based on the location and rotation
+	private double[] hitBoxX;
+	private double[] hitBoxY;
+	
 	public Vehicle(int x, int y, ID id, RoadMap rm, double normalSpeed, 
 			Road currentRoad, boolean isGoingForward) 
 	{
@@ -98,6 +106,8 @@ public class Vehicle extends GameObject
 		
 		this.setColor();
 		this.frontLength = 10;
+		this.renderXPoints = new double[]{10, -10, -10,10, 10};
+		this.renderYPoints = new double[]{5, 5, -5, -5, 5};
 	}
 
 	@Override
