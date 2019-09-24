@@ -288,9 +288,9 @@ public class Vehicle extends GameObject
 	    //double ypoints[] = {5, -10, 5, 5};
 		
 	    // making a rectangle
-	    double xpoints[] = {5, -5, -5, 5, 5};
-	    double ypoints[] = {10, 10, -10,-10, 10};
-	    double rotationAngle = this.angle + Math.PI/2; // idk why, but it has to be rotated by 90
+	    double xpoints[] = {10, -10, -10,10, 10};
+	    double ypoints[] = {5, 5, -5, -5, 5};
+	    double rotationAngle = this.angle;
 	    for(int i = 0; i < xpoints.length; i++)
 	    {
 	    	double temp = x + xpoints[i]*Math.cos(rotationAngle) - ypoints[i]*Math.sin(rotationAngle);
