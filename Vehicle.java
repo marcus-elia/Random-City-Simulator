@@ -86,6 +86,11 @@ public class Vehicle extends GameObject
 		double[] startCoords = currentRoad.getForwardStartCoordinates();
 		this.x = startCoords[0];
 		this.y = startCoords[1];
+		
+		this.renderXPoints = new double[]{10, -10, -10,10, 10};
+		this.renderYPoints = new double[]{5, 5, -5, -5, 5};
+		this.hitBoxX = new double[]{10, -10, -10,10, 10};
+		this.hitBoxY = new double[]{5, 5, -5, -5, 5};
 
 		this.isInIntersection = false;
 		this.isOnRoad = true;
@@ -106,10 +111,7 @@ public class Vehicle extends GameObject
 		
 		this.setColor();
 		this.frontLength = 10;
-		this.renderXPoints = new double[]{10, -10, -10,10, 10};
-		this.renderYPoints = new double[]{5, 5, -5, -5, 5};
-		this.hitBoxX = new double[]{10, -10, -10,10, 10};
-		this.hitBoxY = new double[]{5, 5, -5, -5, 5};
+		
 	}
 
 	@Override
