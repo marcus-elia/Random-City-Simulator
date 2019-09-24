@@ -178,6 +178,7 @@ public class Vehicle extends GameObject
 		{
 			this.x = this.targetX;
 			this.y = this.targetY;
+			this.updateHitBox();
 		}
 		
 		// if we are on a road and the front of the vehicle is close to the start of
@@ -209,6 +210,7 @@ public class Vehicle extends GameObject
 			}
 			this.x += this.dx;
 			this.y += this.dy;
+			this.updateHitBox();
 			
 			// if we are not at normal speed and we are on a road, accelerate
 			if(this.isOnRoad && this.speed < this.normalSpeed)
@@ -225,6 +227,7 @@ public class Vehicle extends GameObject
 	{
 		this.angle = Math.atan2(this.targetY - this.y, this.targetX - this.x);
 		this.setDxDy();	
+		this.updateHitBox();
 	}
 	
 	
