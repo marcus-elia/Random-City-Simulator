@@ -108,6 +108,8 @@ public class Vehicle extends GameObject
 		this.frontLength = 10;
 		this.renderXPoints = new double[]{10, -10, -10,10, 10};
 		this.renderYPoints = new double[]{5, 5, -5, -5, 5};
+		this.hitBoxX = new double[]{10, -10, -10,10, 10};
+		this.hitBoxY = new double[]{5, 5, -5, -5, 5};
 	}
 
 	@Override
@@ -288,6 +290,20 @@ public class Vehicle extends GameObject
 		this.dx = this.speed*Math.cos(this.angle);
 		this.dy = this.speed*Math.sin(this.angle);
 	}
+	
+	// If the vehicle has moved or rotated, we must update the x and y coordinates
+	// of the hitbox private variables
+	public void updateHitBox()
+	{
+		for(int i = 0; i < this.hitBoxX.length; i++)
+		{
+			this.hitBoxX[i] = this.x + this.renderXPoints[i]*Math.cos(this.angle) -
+					this.renderYPoints[i]*Math.sin(this.angle);
+			this.hitBoxY[i] = this.y + this.renderXPoints[i]*Math.sin(this.angle) +
+					this.renderYPoints[i]*Math.cos(this.angle);
+		}
+	}
+	
 	
 	@Override
 	public void render(Graphics2D g) 
