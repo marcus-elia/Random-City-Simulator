@@ -319,7 +319,7 @@ public class Vehicle extends GameObject
 	    //double ypoints[] = {5, -10, 5, 5};
 		
 	    // making a rectangle
-	    double xpoints[] = {10, -10, -10,10, 10};
+	    /*double xpoints[] = {10, -10, -10,10, 10};
 	    double ypoints[] = {5, 5, -5, -5, 5};
 	    double rotationAngle = this.angle;
 	    for(int i = 0; i < xpoints.length; i++)
@@ -327,7 +327,9 @@ public class Vehicle extends GameObject
 	    	double temp = x + xpoints[i]*Math.cos(rotationAngle) - ypoints[i]*Math.sin(rotationAngle);
 	    	ypoints[i] =  y + xpoints[i]*Math.sin(rotationAngle) + ypoints[i]*Math.cos(rotationAngle);
 	    	xpoints[i] = temp;
-	    }
+	    }*/
+	    double xpoints[] = this.hitBoxX;
+	    double ypoints[] = this.hitBoxY;
 	    Path2D path = new Path2D.Double();
 	    path.moveTo(xpoints[0], ypoints[0]);
 	    for(int i = 1; i < xpoints.length; i++)
