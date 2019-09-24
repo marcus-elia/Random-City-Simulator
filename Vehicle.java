@@ -282,11 +282,14 @@ public class Vehicle extends GameObject
 	@Override
 	public void render(Graphics2D g) 
 	{
-		g.setColor(this.paintColor);
+            g.setColor(this.paintColor);
 			
-		// these lists are each coordinate's displacement from this.x, this.y
-		double xpoints[] = {-5, 0, 5, 5};
-	    double ypoints[] = {5, -10, 5, 5};
+	    //double xpoints[] = {-5, 0, 5, 5};
+	    //double ypoints[] = {5, -10, 5, 5};
+		
+	    // making a rectangle
+	    double xpoints[] = {5, -5, -5, 5, 5};
+	    double ypoints[] = {10, 10, -10,-10, 10};
 	    double rotationAngle = this.angle + Math.PI/2; // idk why, but it has to be rotated by 90
 	    for(int i = 0; i < xpoints.length; i++)
 	    {
